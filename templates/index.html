@@ -1,151 +1,129 @@
-{% extends 'includes/layout.html' %}
+<!doctype html>
+<html lang="en">
 
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+  <title>Hello, world!</title>
+</head>
 
-{% block body %}
-<main class="container">
-  <div class="bg-light p-5 rounded mt-5">
-    <h1>Skolo Online AI Content Generator with OpenAI GPT-3</h1>
-    <p class="lead">This example was created as part of the Skolo Online YouTube channel. it is a web application
-    created in Flask that can be used to generate random content using Artificial Intelligence API from OpenAI.
-    </p>
-    <p class="lead">You can use this content generator to create blog post ideas, blog details, social media content etc. Just
-     give it a try and remember to leave us some feedback. </p>
-  </div>
-
-
-  <div class="p-5 rounded mt-1">
+<body>
+  <div class="container">
+    <h1 class="mt-5"> Enter the details for writing application !</h1>
     <div class="row">
-
-
-      <!-- One Item Starts Here -->
-      <div class="col-lg-3 mb-3">
-        <div class="card">
-          <div class="card-header">
-            Product Description
+      <div class="col-lg-6">
+        <form class="" action="/" method="post">
+          <div class="form-group">
+            <label for="Name of the candidate">Name of the candidate</label>
+            <input type="text" class="form-control" name="nameofcandidate" placeholder="Enter Name of the candidate">
           </div>
-          <div class="card-body">
-            <h5 class="card-title"> 🛍️ Generate Product Descriptions 🛍 ️</h5>
-            <p class="card-text">Generate product descriptions for any types of products, simply enter the name and productdescription to get started.</p>
-            <a href="/product-description" class="btn btn-primary">Get Started</a>
+          <div class="form-group">
+            <label for="Date Of Birth">Date of Birth</label>
+            <input type="date" class="form-control" name="dateofbirth"
+              placeholder="Enter date of birth of the candidate">
           </div>
-        </div>
+          <div class="form-group">
+            <label for="Current Location">Current Location of the candidate</label>
+            <input type="text" class="form-control" name="locationofcandidate"
+              placeholder="Enter location of the candidate">
+          </div>
+          <div class="form-group">
+            <label for="Contact Details">Contact Details</label>
+            <input type="number" class="form-control" name="numberofcandidate"
+              placeholder="Enter contact number of the candidate">
+          </div>
+          <div class="form-group">
+            <label for="Country">Country for which you have applied for Student Visa</label>
+            <input type="text" class="form-control" name="country" placeholder="Enter country">
+          </div>
+          <div class="form-group">
+            <label for="Name of the college">Name of college you are applying for admission</label>
+            <input type="text" class="form-control" name="nameofcollege" placeholder="Enter Name of the college">
+          </div>
+          <div class="form-group">
+            <label for="Name of the course/link">Help us with the course you have applied and add the link to the course
+              / program</label>
+            <input type="text" class="form-control" name="nameofcourse" placeholder="Enter Name of the course">
+          </div>
+          <div class="form-group">
+            <label for="Score">Share your IELTS Academics Band and score in Listening /Reading /Writing
+              /Speaking</label>
+            <input type="text" class="form-control" name="score" placeholder="Enter Score">
+          </div>
+          <div class="form-group">
+            <label for="Score2">Share academics percentages for 10th ,12th ,graduation with the year you passed and
+              stream choosen</label>
+            <input type="text" class="form-control" name="Score2" placeholder="Enter scores of academics">
+          </div>
+          <div class="form-group">
+            <label for="Experience">Let us know your experience ? You can also add here your hobbies , extra curricular
+              activities in School or Colleges ?</label>
+            <input type="text" class="form-control" name="experience" placeholder="Experience">
+          </div>
+          <div class="form-group">
+            <label for="Parents information">Share information related to your parents and siblings, let us know their
+              profession and education .</label>
+            <input type="text" class="form-control" name="parentsinfo" placeholder="Enter details">
+          </div>
+          <div class="form-group">
+            <label for="Refusal">Had you received any visa refusal in the past ?</label>
+            <input type="text" class="form-control" name="refusal" placeholder="Refusal Status">
+          </div>
+          <div class="form-group">
+            <label for="Infromation realted to academics">Anything in specific ,you wish to inform us which relates to
+              your course or academics or else of your work experience</label>
+            <input type="text" class="form-control" name="academicinfo" placeholder="Enter deatils of academic">
+          </div>
+          <div class="form-group">
+            <label for="Gap Year">Do you have a GAP year ,let us know in detail on this ,if you don't have a gap year
+              ,just mention it as Not Applicable</label>
+            <input type="text" class="form-control" name="gapyear" placeholder="Yes/No">
+          </div>
+          <div class="form-group">
+            <label for="Fees">Share GIC paid and Fees amount deposited</label>
+            <input type="text" class="form-control" name="fees" placeholder="GIC Fees">
+          </div>
+          <div class="form-group">
+            <label for="Fee Status">Have you paid the fees for the SOP services?</label>
+            <input type="text" class="form-control" name="feestatus" placeholder="Enter status of fees">
+          </div>
+          <div class="form-group">
+            <label for="Confirmation">Kindly confirm that you had shared all genuine information and you agree to
+              indemnify and hold Turn Around School Consultants and its affiliates, officers, agents, co-branders or
+              other partners and employees, harmless from any claim or demand, including reasonable attorneys’ fees made
+              by any third party due to the content you submit or the document we share as a final product ,towards your
+              use of this services , your violation of the Terms of Use, or your violation of any rights of another
+              user.</label>
+            <input type="text" class="form-control" name="confirmation" placeholder="Confirmation">
+          </div>
+          <!--<button id="name" class="btn btn-primary">
+            Submit Name
+          </button>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div> -->
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
       </div>
-      <!-- One Item Ends here -->
-
-
-      <!-- One Item Starts Here -->
-      <div class="col-lg-3 mb-3">
-        <div class="card">
-          <div class="card-header">
-            Job Description
-          </div>
-          <div class="card-body">
-            <h5 class="card-title"> 🖥️ Generate Job Descriptions 🖥️ </h5>
-            <p class="card-text">Are you trying to come up with professional sounding job descriptions but have hit a writers block? Let AI help you along. </p>
-            <a href="/job-description" class="btn btn-primary">Get Started</a>
-          </div>
-        </div>
+      <div class="col-lg-6">
+        <p> 1. {{blogTopicIdeas|safe}} </p>
       </div>
-      <!-- One Item Ends here -->
-
-
-      <!-- One Item Starts Here -->
-      <div class="col-lg-3 mb-3">
-        <div class="card">
-          <div class="card-header">
-            Tweet Ideas
-          </div>
-          <div class="card-body">
-            <h5 class="card-title"> 🐦 Generate Tweets 🐦 </h5>
-            <p class="card-text">Start generating tweet ideas with hashtags for your online social media campaigns on twitter. Create endless unique tweet ideas, no more writers block. </p>
-            <a href="/tweet-ideas" class="btn btn-primary">Get Started</a>
-          </div>
-        </div>
-      </div>
-      <!-- One Item Ends here -->
-
-
-      <!-- One Item Starts Here -->
-      <div class="col-lg-3 mb-3">
-        <div class="card">
-          <div class="card-header">
-            Cold Emails
-          </div>
-          <div class="card-body">
-            <h5 class="card-title"> ✉️ Cold Email Template ✉️ </h5>
-            <p class="card-text">This is perfect for marketing agents or companies who need fresh ideas daily on cold email content that is created by AI technology. </p>
-            <a href="/cold-emails" class="btn btn-primary">Get Started</a>
-          </div>
-        </div>
-      </div>
-      <!-- One Item Ends here -->
-
-
-      <!-- One Item Starts Here -->
-      <div class="col-lg-3 mb-3">
-        <div class="card">
-          <div class="card-header">
-            Social Media
-          </div>
-          <div class="card-body">
-            <h5 class="card-title"> 👨‍👩‍👧‍👦 Social Media Adverts 👨‍👩‍👧‍👦 </h5>
-            <p class="card-text">Looking for some creative social media advert ideas for your online campaigns on Facebook, Twitter or Instagram? We got you. </p>
-            <a href="/social-media" class="btn btn-primary">Get Started</a>
-          </div>
-        </div>
-      </div>
-      <!-- One Item Ends here -->
-
-
-      <!-- One Item Starts Here -->
-      <div class="col-lg-3 mb-3">
-        <div class="card">
-          <div class="card-header">
-            Business Pitch
-          </div>
-          <div class="card-body">
-            <h5 class="card-title"> 💼 Business Idea Pitch ‍💼 </h5>
-            <p class="card-text"> Create some ideas for a quick one paragraph pitch for your business idea, describe your idea and produce useful pitches. </p>
-            <a href="/business-pitch" class="btn btn-primary">Get Started</a>
-          </div>
-        </div>
-      </div>
-      <!-- One Item Ends here -->
-
-
-      <!-- One Item Starts Here -->
-      <div class="col-lg-3 mb-3">
-        <div class="card">
-          <div class="card-header">
-            Youtube Videos
-          </div>
-          <div class="card-body">
-            <h5 class="card-title"> 📺 Youtube Video Ideas 📺 </h5>
-            <p class="card-text"> Want to get started on YouTube but need some Video Ideas to start working on? Start generating some YouTube Video Ideas right away with AI. </p>
-            <a href="/video-ideas" class="btn btn-primary">Get Started</a>
-          </div>
-        </div>
-      </div>
-      <!-- One Item Ends here -->
-
-      <!-- One Item Starts Here -->
-      <div class="col-lg-3 mb-3">
-        <div class="card">
-          <div class="card-header">
-            Youtube Videos
-          </div>
-          <div class="card-body">
-            <h5 class="card-title"> ⏩ Youtube Video Description ⏩ </h5>
-            <p class="card-text"> This AI tool will help you draft some cool video descriptions based on a topic or video idea. Just enter your video topic. </p>
-            <a href="/video-description" class="btn btn-primary">Get Started</a>
-          </div>
-        </div>
-      </div>
-      <!-- One Item Ends here -->
-
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
   </div>
-</main>
-{% endblock %}
+</body>
+
+</html>
