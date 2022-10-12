@@ -27,7 +27,11 @@ def generatename(prompt):
   start_sequence = "To"+","
   response = openai.Completion.create(
   model="text-davinci-002",
-  prompt="Generate an SOP for refusal of visa in following the format-\
+  prompt="Generate an SOP for refusal of visa in following the format by explaining about\
+    purpose of visit to the country {} in 500 words and importance of the course {} in 500 words and the university {} in 500 words in which candidate\
+    is going to take admission and also explain about reason to return back to home country which should based \
+    on the family background and current background   provided \
+    below - \
     To,\
     Visa Officer\
     {}\
@@ -41,25 +45,28 @@ def generatename(prompt):
     Date of Birth is {} .\
     Current location of candidate is {} .\
     Contact Number of candidate is {} .\
-    Country for which candidate has applied for Student Visa is {} .\
-    Name of college candidate has applied for admission is {} .\
-    Course Name: {} .\
-    Explain about the course given above\
-    Give detailed information of the following scores : \
+    Country for which candidate has applied for Student Visa is {} .\n\
+    Instruction - In 500 words explain purpose of visit to {} country\
+    Name of college candidate has applied for admission is {} .\n\
+    Instruction - In 500 words explain why {} university is better ?\
+    Course Name: {} .\n\
+    Instruction - In 100 words explain details of {} course\
     IELTS Academics Band and score in Listening /Reading /Writing /Speaking are as : {} \n\
     Academics percentages for 10th ,12th ,graduation with the year of passing and stream choosen are as: {} \n\
-    Family Background is {} .\
+    Instruction - Give detailed information of the above academic and IELTS scores of the candidate \
+    Family Background is {} .\n\
+    Instruction - Ensure the officer to believe that the candidate will be returning back to the country because of his/her family background. \
     Has candidate received visa refusal in the past status is {} .\
     Some extra information specific to course or academics are {}.\
     Does candidate have a gap year  {} .\
     Details of GIC paid and Fees amount deposited are {} .\
     Paid the fees for the SOP services is {} .\
-    ".format(prompt[4],prompt[0],prompt[1],prompt[2],prompt[3],prompt[4],prompt[5],prompt[6],prompt[7],prompt[8],prompt[9],prompt[10],\
-      prompt[11],prompt[12],prompt[13],prompt[14],prompt[15]),
+    ".format(prompt[5],prompt[6],prompt[7],prompt[4],prompt[0],prompt[1],prompt[2],prompt[3],prompt[4],prompt[5],prompt[5],prompt[6],prompt[6],prompt[7],prompt[7]\
+      ,prompt[8],prompt[9],prompt[10],prompt[11],prompt[12],prompt[13],prompt[14],prompt[15]),
   temperature=0.7,
-  max_tokens=3600,
+  max_tokens=3000,
   top_p=1,
-  frequency_penalty=0,
+  frequency_penalty=0.2,
   presence_penalty=0
   )
   return response['choices'][0]['text']
