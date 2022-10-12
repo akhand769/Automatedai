@@ -24,17 +24,16 @@ openai.api_key = config.OPENAI_API_KEY
 
 
 def generatename(prompt):
-  start_sequence = "To"+","
+  start_sequence = "To,"
   response = openai.Completion.create(
   model="text-davinci-002",
-  prompt="Generate an SOP for refusal of visa in following the format by explaining about\
-    purpose of visit to the country {} in 500 words and importance of the course {} in 500 words and the university {} in 500 words in which candidate\
-    is going to take admission and also explain about reason to return back to home country which should based \
-    on the family background and current background   provided \
-    below - \
-    To,\
-    Visa Officer\
-    {}\
+  prompt="If {} is an url then search on google and use details in the SOP.\Generate a SOP for refusal of visa by explaining about purpose of visit to the country {} and importance of the course {} and the university {} in which candidate\
+    is going to take admission and also explain about reason to return back to home country which should based on the family background and current background provided below - \
+    The SOP should be in following format divided in 4 paragraphs- \
+    To,\n\
+    Visa Officer\n\
+    {}\n\
+    {}\n\
     Give subject of the sop as : SOP/Explanation regarding refusal of visa\
     Greet with respected Sir/Ma'am\
     Now write application with an experience generated from the experience given by the candidate\
@@ -43,25 +42,24 @@ def generatename(prompt):
     Following data is provided by a candidate to apply for a college:\n\
     Name of the Candidate is {} .\
     Date of Birth is {} .\
-    Current location of candidate is {} .\
     Contact Number of candidate is {} .\
     Country for which candidate has applied for Student Visa is {} .\n\
-    Instruction - In 500 words explain purpose of visit to {} country\
+    Instruction - Explain in detail about purpose of visit to {} country\
     Name of college candidate has applied for admission is {} .\n\
-    Instruction - In 500 words explain why {} university is better ?\
-    Course Name: {} .\n\
-    Instruction - In 100 words explain details of {} course\
+    Instruction - Explain in detail why {} university is better ?\n\
+    Instruction - Explain in details about {} course\n\
     IELTS Academics Band and score in Listening /Reading /Writing /Speaking are as : {} \n\
+    Write a paragraph to give scores of the candidate as below -\
     Academics percentages for 10th ,12th ,graduation with the year of passing and stream choosen are as: {} \n\
-    Instruction - Give detailed information of the above academic and IELTS scores of the candidate \
-    Family Background is {} .\n\
-    Instruction - Ensure the officer to believe that the candidate will be returning back to the country because of his/her family background. \
-    Has candidate received visa refusal in the past status is {} .\
-    Some extra information specific to course or academics are {}.\
+    Instruction - Give 100 words detailed information of the above academic and IELTS scores of the candidate\n \
+    Instruction - Write a 200 words paragraph to give reason to the officer that the candidate will be returning back to the country giving the reason as : {}. \
+    Has candidate received visa refusal in the past status is {} .\n\
+    Write any story about candidate to have experience as : {}.\n\
     Does candidate have a gap year  {} .\
     Details of GIC paid and Fees amount deposited are {} .\
     Paid the fees for the SOP services is {} .\
-    ".format(prompt[5],prompt[6],prompt[7],prompt[4],prompt[0],prompt[1],prompt[2],prompt[3],prompt[4],prompt[5],prompt[5],prompt[6],prompt[6],prompt[7],prompt[7]\
+    Instruction - At last conclude the SOP with request to accept the visa. \
+    ".format(prompt[5],prompt[5],prompt[6],prompt[7],prompt[4],prompt[2],prompt[0],prompt[1],prompt[3],prompt[4],prompt[5],prompt[6],prompt[6],prompt[7],prompt[7]\
       ,prompt[8],prompt[9],prompt[10],prompt[11],prompt[12],prompt[13],prompt[14],prompt[15]),
   temperature=0.7,
   max_tokens=3000,
